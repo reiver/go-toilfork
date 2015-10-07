@@ -6,6 +6,8 @@ import (
 
 	"github.com/reiver/go-toil/toiltest"
 
+	"github.com/reiver/go-toil"
+
 	"math/rand"
 	"sync"
 	"time"
@@ -15,7 +17,7 @@ import (
 
 func TestNew(t *testing.T) {
 
-	newFn := func() (Toiler, error) {
+	newFn := func() (toil.Toiler, error) {
 		return nil, nil
 	}
 
@@ -30,7 +32,7 @@ func TestNew(t *testing.T) {
 
 func TestNewFunc(t *testing.T) {
 
-	newFn := func() (Toiler, error) {
+	newFn := func() (toil.Toiler, error) {
 		return nil, nil
 	}
 
@@ -43,7 +45,7 @@ func TestNewFunc(t *testing.T) {
 
 func TestLen(t *testing.T) {
 
-	newFn := func() (Toiler, error) {
+	newFn := func() (toil.Toiler, error) {
 		return nil, nil
 	}
 
@@ -62,7 +64,7 @@ func TestFork(t *testing.T) {
 
 	toiler := toiltest.NewRecorder()
 
-	newFn := func() (Toiler, error) {
+	newFn := func() (toil.Toiler, error) {
 		return toiler, nil
 	}
 
@@ -105,7 +107,7 @@ func TestToil(t *testing.T) {
 		})
 
 
-		newFn := func() (Toiler, error) {
+		newFn := func() (toil.Toiler, error) {
 			return toiler, nil
 		}
 

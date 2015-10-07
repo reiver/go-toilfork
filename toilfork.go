@@ -15,7 +15,7 @@ var (
 
 // ToilForker is an interface that wraps the Fork, Len and Toil methods.
 type ToilForker interface {
-	Toiler
+	toil.Toiler
 
 	// Len returns the number of toilers registered with this toil fork group.
 	Len() int
@@ -45,7 +45,7 @@ func New(newer Newer) ToilForker {
 
 
 // NewFunc returns an initialized ToilForker.
-func NewFunc(fn func()(Toiler, error)) ToilForker {
+func NewFunc(fn func()(toil.Toiler, error)) ToilForker {
 	newer := newFuncNewer(fn)
 
 	return New(newer)
