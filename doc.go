@@ -1,5 +1,5 @@
 /*
-Package toilfork provides simple functionality for managing a group of toilers (i.e., workers) where each is toiler is basically the "same" toiler.
+Package toilfork provides simple functionality for managing a group of toilers (i.e., workers) where each toiler in the group is basically the "same" toiler.
 
 In this use case, the toilers are all created from a single toiler creation func or interface that is registered when creating the toilfork group is created.
 
